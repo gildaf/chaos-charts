@@ -1,0 +1,40 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+#  createdAt: 2021-05-24T10:28:08Z
+  name: delete-single-fc-pod
+#  version: 0.1.0
+  annotations:
+    categories: redis
+    chartDescription: Injects chaos into redis NextGen Database
+spec:
+  displayName: Delete Single FC
+  categoryDescription: >
+    First Chaos. mostly for POC purposes. 
+    Delete an FC pod and see that the pod is going back up
+    and that raft is eventually stable.
+  experiments:
+    - pod-delete
+  keywords:
+    - Kubernetes
+    - Podtato-head
+    - Pod
+  platforms:
+    - GKE
+    - Minikube
+    - Packet(Kubeadm)
+    - EKS
+    - AKS
+  maintainers:
+    - name: gil
+      email: gildaf@redis.com
+  provider:
+    name: NextGen Team
+  links:
+    - name: Kubernetes Slack
+      url: https://slack.kubernetes.io/
+    - name: Documentation
+      url: https://docs.litmuschaos.io/docs/chaoshub/#generic-chaos
+  icon:
+    - url:
+      mediatype: ""
