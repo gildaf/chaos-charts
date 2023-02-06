@@ -1,0 +1,36 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: ngc-pod-delete-recover
+  annotations:
+    categories: redis
+    chartDescription: Injects chaos into redis NextGen Database
+spec:
+  displayName: NextGen Delete pod and check raft recovery
+  categoryDescription: >
+    Simple workflow for sanity testing. 
+    Just checking basic functionality before and after we delete a pod (simple set get).
+  experiments:
+    - pod-delete
+  keywords:
+    - NextGen
+    - pod delete
+  platforms:
+    - GKE
+    - Minikube
+    - Packet(Kubeadm)
+    - EKS
+    - AKS
+  maintainers:
+    - name: gil
+      email: gildaf@redis.com
+  provider:
+    name: NextGen Team
+  links:
+    - name: NextGen
+      url: https://github.com/redislabsdev/next-gen
+    - name: NextGen Litmus Workflows
+      url: https://github.com/gildaf/chaos-charts
+  icon:
+    - url:
+      mediatype: ""
