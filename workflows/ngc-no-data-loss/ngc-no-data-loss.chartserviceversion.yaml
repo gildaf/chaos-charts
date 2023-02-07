@@ -1,0 +1,35 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: ngc-no-data-loss
+  annotations:
+    categories: redis
+    chartDescription: Generate traffic and check that the all expected data is present after we abuse the database
+spec:
+  displayName: Do stuff to the database (like killing pods) and check data integrity
+  categoryDescription: >
+    Injects chaos into redis NextGen Database and Check
+  experiments:
+    - pod-delete
+  keywords:
+    - NextGen
+    - pod delete
+  platforms:
+    - GKE
+    - Minikube
+    - Packet(Kubeadm)
+    - EKS
+    - AKS
+  maintainers:
+    - name: gil
+      email: gildaf@redis.com
+  provider:
+    name: NextGen Team
+  links:
+    - name: NextGen
+      url: https://github.com/redislabsdev/next-gen
+    - name: NextGen Litmus Workflows
+      url: https://github.com/gildaf/chaos-charts
+  icon:
+    - url:
+      mediatype: ""
